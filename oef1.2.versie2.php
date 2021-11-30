@@ -24,22 +24,20 @@
     <div class="row">
         <?php
         //een lijst met afbeeldingen
-        $afbeeldingen = ["berlin.jpg",
-            "london.jpg",
-            "paris.jpg"
+        $afbeeldingen = ["Berlin" => "berlin.jpg",
+            "London" => "london.jpg",
+            "Paris" => "paris.jpg"
         ];
         //alle afbeeldingen overlopen en kolom opmaken met titel en afbeelding
-        $kolomnummer= 1;
-        foreach($afbeeldingen as $afbeelding)
+        foreach($afbeeldingen as $stad => $afbeelding)
         {
             print "<div class='col-sm-4'>
-            <h3>Column $kolomnummer </h3>
+            <h3>$stad </h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
       
             <img src=./images/$afbeelding width='300' height='200'>
             </div>";
-            $kolomnummer++;
         }
         ?>
     </div>
