@@ -17,7 +17,7 @@
 
 <div class="jumbotron text-center">
     <h1>De leukste plekken in Europa</h1>
-    <p>Resize this responsive page to see the effect!</p>
+    <p>Tips voor citytrips voor vrolijke vakantiegangers!</p>
 </div>
 
 <div class="container">
@@ -41,12 +41,17 @@
         {
             while($row = $result->fetch_assoc())
             {
-                echo $row["img_title"] . "<br>";
-                echo "w:" .$row["img_width"] . "<br>";
-                echo "w:" .$row["img_height"] . "<br>";
-                echo $row["img_filename"] . "<br>";
-                "<p>Lorem ipsum dolor sit amet, consecturadipiscing elit...</p>";
-                echo "<br>";
+                print "<h3>" . $row["img_title"] . "</h3>";
+                print "<p>" . $row["img_width"] . " x </p>";
+                print "<td>" . $row["img_height"] . " pixels</td>";
+
+                if ($row["img_filename"] > ""){
+                    $afbeeldingslink = "<img src=" . $row["img_filename"] . " />";
+                }
+                else{
+                    $afbeeldingslink = null;
+                }
+                print "<td>$afbeeldingslink</td>";
             }
         }
         else
